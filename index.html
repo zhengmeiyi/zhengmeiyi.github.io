@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        .heart3d {
+			width: 100px;
+			height: 160px;
+			margin: 200px auto;
+			position: relative;
+			transition: 4s;
+			transform-style: preserve-3d;
+		}
+ 
+		.heart {
+			width: 100px;
+			height: 160px;
+			border: 2px solid red;
+			position: absolute;
+			border-left: 0;
+			border-bottom: 0;
+			border-radius: 50% 50% 0/40% 50% 0;
+ 
+		}
+ 
+		.heart3d:hover {
+			transform: rotateX(360deg) rotateY(360deg);
+		}
+	</style>
+</head>
+ 
+<body>
+	<div class="heart3d"></div>
+	<script>
+		var heart3d = document.getElementsByClassName("heart3d")[0];  
+		for (var i = 0; i < 36; i++) {
+			var odiv = document.createElement("div");
+			odiv.className = "heart";
+			odiv.style.transform = "rotateY(" + i * 10 + "deg) rotateZ(45deg)  translateX(30px)";
+			heart3d.appendChild(odiv);   //遍历插入
+ 
+		}
+	</script>
+</body>
+
+</html>
